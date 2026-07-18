@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results Recap — Europa League Q1 · Jul 16, 2026</title>
+<style>
+:root{--vw-bg1:#0d0221;--vw-bg2:#1b0b45;--vw-bg3:#2a0e5e;--vw-pink:#ff71ce;--vw-magenta:#ff2a9d;--vw-cyan:#01cdfe;--vw-teal:#05ffa1;--vw-pastel:#b8c0ff;--vw-cream:#fffb96;--vw-ink:#f5f0ff;--vw-dim:#a99cd6;--vw-card:#180836;--vw-card2:#22104a;--vw-line:#4b2a8a;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--vw-ink);
+background:linear-gradient(175deg,var(--vw-bg1) 0%,var(--vw-bg2) 55%,var(--vw-bg3));
+min-height:100vh;padding:20px 12px 56px}
+.wrap{max-width:1080px;margin:0 auto}
+.banner{background:#12042e;border:2px solid var(--vw-magenta);color:var(--vw-pink);
+border-radius:12px;padding:12px 18px;text-align:center;font-weight:800;font-size:15px;
+letter-spacing:1.5px;text-transform:uppercase;margin:0 0 24px;
+box-shadow:0 0 18px rgba(255,42,157,.35),inset 0 0 12px rgba(255,42,157,.12)}
+h1{font-size:clamp(24px,5vw,42px);text-align:center;line-height:1.2;letter-spacing:3px;
+background:linear-gradient(90deg,var(--vw-pink),var(--vw-pastel),var(--vw-cyan));
+-webkit-background-clip:text;background-clip:text;color:transparent;
+filter:drop-shadow(0 2px 12px rgba(1,205,254,.35));margin-bottom:6px}
+.sub{color:var(--vw-dim);text-align:center;margin:8px auto 24px;max-width:760px;font-size:14.5px}
+.legend{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 30px}
+.chip{background:var(--vw-card);border:1px solid var(--vw-line);border-radius:999px;
+padding:6px 13px;font-size:12.5px;color:var(--vw-pastel)}
+.chip b{color:var(--vw-cream)}
+h2{font-size:22px;margin:32px 0 6px;display:flex;align-items:center;gap:10px;
+color:var(--vw-cyan);letter-spacing:1px;text-shadow:0 0 10px rgba(1,205,254,.4)}
+h2 .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--vw-magenta),var(--vw-cyan),transparent)}
+.h2sub{color:var(--vw-dim);font-size:13.5px;margin-bottom:16px}
+.picks,.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.pick{background:linear-gradient(150deg,var(--vw-card2),var(--vw-card));
+border:1px solid var(--vw-line);border-radius:14px;padding:16px;position:relative;
+overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.pick.hot{border-color:var(--vw-teal);box-shadow:0 0 0 1px rgba(5,255,161,.5),0 0 22px rgba(5,255,161,.18)}
+.pick.hit{border-color:var(--vw-teal)}.pick.miss{border-color:var(--vw-magenta)}
+.edge{position:absolute;top:12px;right:12px;background:var(--vw-teal);color:#03301d;
+font-weight:900;font-size:17px;border-radius:10px;padding:5px 10px;
+box-shadow:0 0 14px rgba(5,255,161,.5)}
+.stamp{position:absolute;top:12px;right:12px;font-weight:900;font-size:15px;
+border-radius:10px;padding:5px 10px}
+.stamp.hit{background:var(--vw-teal);color:#03301d}.stamp.miss{background:var(--vw-magenta);color:#33021c}
+.stamp.push{background:var(--vw-pastel);color:#1b1b3a}
+.pick .what{font-size:17.5px;font-weight:800;margin:0 76px 6px 0;line-height:1.3}
+.pick .odds,.pick .res{color:var(--vw-cream);font-weight:700;font-size:13.5px;margin-bottom:5px}
+.pick .nums,.pick .agg{color:var(--vw-dim);font-size:13px;margin-bottom:7px}
+.pick .cheer{font-size:13.5px;background:rgba(255,255,255,.05);border-radius:9px;padding:7px 9px}
+.pick .meta{color:var(--vw-dim);font-size:12px;margin-top:9px}
+.lowconf{display:inline-block;background:rgba(255,251,150,.12);color:var(--vw-cream);
+border:1px solid var(--vw-cream);border-radius:999px;font-size:11px;padding:2px 8px;margin-left:6px}
+.mega{grid-column:1/-1;background:linear-gradient(135deg,#2a1608,var(--vw-card2));
+border:2px solid var(--vw-cream);border-radius:16px;padding:18px}
+.mega .what{font-size:21px;font-weight:900;color:var(--vw-cream)}
+.mega .explain,.mega .verdict{color:var(--vw-dim);font-size:13.5px;margin:8px 0 12px}
+.mega table{width:100%;border-collapse:collapse;font-size:13px}
+.mega td{padding:5px 8px;border-bottom:1px dashed var(--vw-line)}
+.mega td.e{color:var(--vw-teal);font-weight:700;text-align:right}
+.day{margin-top:34px}
+.match{background:var(--vw-card);border:1px solid var(--vw-line);border-radius:14px;
+padding:14px 16px;margin:12px 0}
+.match h3{font-size:16.5px;margin-bottom:2px}
+.match .aggline{color:var(--vw-dim);font-size:12.5px;margin-bottom:9px}
+.match table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+.match th{color:var(--vw-cyan);text-align:left;font-weight:600;font-size:11px;
+text-transform:uppercase;letter-spacing:.8px;padding:4px 8px;border-bottom:1px solid var(--vw-line)}
+.match td{padding:6px 8px;border-bottom:1px solid #2c1a58}
+.match tr.flag td{background:rgba(5,255,161,.09)}
+.match tr.flag td:first-child{border-left:3px solid var(--vw-teal)}
+.badge{font-weight:800;color:var(--vw-teal)}
+.pass{color:var(--vw-dim)}
+.quip{color:var(--vw-dim);font-size:12.5px;font-style:italic;margin-top:8px}
+.nobov{opacity:.75;border-style:dashed}
+.kick{color:var(--vw-cream);font-weight:700}
+.score{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:0 0 8px}
+.tile{background:var(--vw-card);border:1px solid var(--vw-line);border-radius:14px;
+padding:14px 20px;text-align:center;min-width:140px}
+.tile .big{font-size:28px;font-weight:900;color:var(--vw-cyan)}
+.tile .lbl{color:var(--vw-dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.8px}
+.nerd{color:var(--vw-dim);text-align:center;font-size:13px;margin:8px 0 26px}
+.autopsy{background:#22052e;border:2px dashed var(--vw-magenta);border-radius:14px;padding:16px;margin-top:14px}
+.autopsy h3{color:var(--vw-pink);font-size:17px;margin-bottom:8px}
+.autopsy .case{margin:9px 0;font-size:13.5px}
+.autopsy .lbl{color:var(--vw-dim);font-size:12px;font-style:italic}
+.chaos li,.passes li{margin:8px 0 8px 18px;font-size:13.5px}
+.passes .hind{color:var(--vw-dim);font-style:italic}
+.notes{background:var(--vw-card);border-radius:12px;border:1px solid var(--vw-line);
+padding:14px 16px;font-size:13.5px;color:var(--vw-dim);margin:30px 0 20px}
+.notes b{color:var(--vw-ink)}
+td.r{text-align:right}.e{color:var(--vw-teal);font-weight:700}
+footer{margin-top:40px}
+@media(max-width:640px){.match table{display:block;overflow-x:auto}
+.picks,.cards{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<div class="banner">PAPER — TRACKED POSITIONS · ZERO STAKES · MODEL UNDER EVALUATION · NOT BETTING ADVICE</div>
+<h1>Results Recap — Europa League Q1 · Jul 16, 2026</h1>
+<p class="sub">Pre-kickoff forecasts graded against finals. Small samples prove nothing; that's a fact about n, not modesty.</p>
+<div class="match"><h3>Derry City 1–2 CSKA Sofia<span class="kick">· FT · Thu 12:30 PM CT</span></h3><div class="aggline">✅ sides lean: CSKA Sofia (A) @ 36% · ❌ totals lean: Under 2.5 @ 53%</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th></th></tr><tr><td>1X2</td><td>Derry City (H)</td><td class="r">34.4%</td><td></td></tr><tr><td>1X2</td><td>Draw</td><td class="r">30.1%</td><td></td></tr><tr><td>1X2</td><td>CSKA Sofia (A)</td><td class="r">35.5%</td><td>✅</td></tr><tr><td>O/U 2.5</td><td>Over 2.5</td><td class="r">46.6%</td><td></td></tr><tr><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td>❌</td></tr></table></div>
+<div class="match"><h3>Universitatea Cluj 0–0 Dynamo Kyiv<span class="kick">· FT · Thu 12:30 PM CT</span></h3><div class="aggline">❌ sides lean: Universitatea Cluj (H) @ 44% · ✅ totals lean: Under 2.5 @ 53%</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th></th></tr><tr><td>1X2</td><td>Universitatea Cluj (H)</td><td class="r">43.7%</td><td>❌</td></tr><tr><td>1X2</td><td>Draw</td><td class="r">29.5%</td><td></td></tr><tr><td>1X2</td><td>Dynamo Kyiv (A)</td><td class="r">26.8%</td><td></td></tr><tr><td>O/U 2.5</td><td>Over 2.5</td><td class="r">46.6%</td><td></td></tr><tr><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td>✅</td></tr></table></div>
+<div class="match"><h3>Aluminij 0–1 Sheriff Tiraspol<span class="kick">· FT · Thu 01:00 PM CT</span></h3><div class="aggline">✅ sides lean: Sheriff Tiraspol (A) @ 42% · ✅ totals lean: Under 2.5 @ 53%</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th></th></tr><tr><td>1X2</td><td>Aluminij (H)</td><td class="r">28.4%</td><td></td></tr><tr><td>1X2</td><td>Draw</td><td class="r">29.7%</td><td></td></tr><tr><td>1X2</td><td>Sheriff Tiraspol (A)</td><td class="r">42.0%</td><td>✅</td></tr><tr><td>O/U 2.5</td><td>Over 2.5</td><td class="r">46.6%</td><td></td></tr><tr><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td>✅</td></tr></table></div>
+<div class="match"><h3>Ferencvarosi TC 3–0 Vojvodina<span class="kick">· FT · Thu 01:15 PM CT</span> <span class="lowconf">📌 hand-pin experiment — re-forecast under a human-verified identity</span> <span class="lowconf">🟠 fallback-rated side</span></h3><div class="aggline">✅ sides lean: Ferencvarosi TC (H) @ 85% · ❌ totals lean: Under 2.5 @ 53%</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th></th></tr><tr><td>1X2</td><td>Ferencvarosi TC (H)</td><td class="r">84.9%</td><td>✅</td></tr><tr><td>1X2</td><td>Draw</td><td class="r">13.3%</td><td></td></tr><tr><td>1X2</td><td>Vojvodina (A)</td><td class="r">1.8%</td><td></td></tr><tr><td>O/U 2.5</td><td>Over 2.5</td><td class="r">46.6%</td><td></td></tr><tr><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td>❌</td></tr></table></div>
+<div class="match"><h3>Žilina 2–1 HNK Hajduk Split<span class="kick">· FT · Thu 01:30 PM CT</span></h3><div class="aggline">✅ sides lean: Žilina (H) @ 37% · ❌ totals lean: Under 2.5 @ 53%</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th></th></tr><tr><td>1X2</td><td>Žilina (H)</td><td class="r">36.6%</td><td>✅</td></tr><tr><td>1X2</td><td>Draw</td><td class="r">30.0%</td><td></td></tr><tr><td>1X2</td><td>HNK Hajduk Split (A)</td><td class="r">33.3%</td><td></td></tr><tr><td>O/U 2.5</td><td>Over 2.5</td><td class="r">46.6%</td><td></td></tr><tr><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td>❌</td></tr></table></div>
+<div class="match"><h3>Vestri 0–3 Qarabag<span class="kick">· FT · Thu 03:00 PM CT</span> <span class="lowconf">📌 hand-pin experiment — re-forecast under a human-verified identity</span> <span class="lowconf">🟠 fallback-rated side</span></h3><div class="aggline">✅ sides lean: Qarabag (A) @ 49% · ❌ totals lean: Under 2.5 @ 53%</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th></th></tr><tr><td>1X2</td><td>Vestri (H)</td><td class="r">22.3%</td><td></td></tr><tr><td>1X2</td><td>Draw</td><td class="r">28.6%</td><td></td></tr><tr><td>1X2</td><td>Qarabag (A)</td><td class="r">49.1%</td><td>✅</td></tr><tr><td>O/U 2.5</td><td>Over 2.5</td><td class="r">46.6%</td><td></td></tr><tr><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td>❌</td></tr></table></div>
+<div class="notes"><b>🔬 ADVISORY (n=1, required section): the Ferencváros gap, now with the outcome.</b><br>Final: <b>Ferencvarosi TC 3–0 Vojvodina</b>. Pre-KO, v1 said 85%/13%/2%; the sponsor's manual Bovada record (source-tagged, advisory-only, never feeds CLV) devigs to 71%/16%/13%.<table><tr><th>Outcome</th><th>v1 (model)</th><th>Bovada devig (manual)</th><th>Result</th></tr><tr><td>Ferencvarosi TC (H)</td><td class="r">84.9%</td><td class="r">71.2%</td><td class="r">●</td></tr><tr><td>Draw</td><td class="r">13.3%</td><td class="r">16.0%</td><td class="r"></td></tr><tr><td>Vojvodina (A)</td><td class="r">1.8%</td><td class="r">12.7%</td><td class="r"></td></tr></table><b>Framing per the standing PM ruling (2026-07-16):</b> the 85-vs-71 gap is a <b>data-quality signal, not a model-vs-market disagreement</b> — Vojvodina carries a fallback floor rating, so v1's input on one side of this match is a warning label, not information. “A probability built on a floor-rated opponent isn't an opinion about the market; it's a warning label about our own input.” One outcome changes none of that: a home win was both parties' modal outcome, and n=1 grades nobody. Logged for the alias/coverage work (hand-pin + rating for Vojvodina-class clubs), not for constants.</div>
+<div class="notes"><b>📏 Calibration one-liner (ADVISORY, n=6 matches — folds into tomorrow's full two-lane recap; no conclusions tonight):</b><br>all 30 rows: Brier 0.2024 · log-loss 0.5828 (30 binary of 30) · 1X2: 0.1624 / 0.4927 · totals: 0.2624 / 0.7180. Six matches prove nothing — that is a fact about n, not modesty.</div>
+<div class="banner">PAPER — TRACKED POSITIONS · ZERO STAKES · MODEL UNDER EVALUATION · NOT BETTING ADVICE</div>
+</div></body></html>
