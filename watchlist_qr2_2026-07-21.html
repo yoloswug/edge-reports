@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watchlist — Champions League QR2 · Jul 21, 2026</title>
+<style>
+:root{--vw-bg1:#0d0221;--vw-bg2:#1b0b45;--vw-bg3:#2a0e5e;--vw-pink:#ff71ce;--vw-magenta:#ff2a9d;--vw-cyan:#01cdfe;--vw-teal:#05ffa1;--vw-pastel:#b8c0ff;--vw-cream:#fffb96;--vw-ink:#f5f0ff;--vw-dim:#a99cd6;--vw-card:#180836;--vw-card2:#22104a;--vw-line:#4b2a8a;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--vw-ink);
+background:linear-gradient(175deg,var(--vw-bg1) 0%,var(--vw-bg2) 55%,var(--vw-bg3));
+min-height:100vh;padding:20px 12px 56px}
+.wrap{max-width:1080px;margin:0 auto}
+.banner{background:#12042e;border:2px solid var(--vw-magenta);color:var(--vw-pink);
+border-radius:12px;padding:12px 18px;text-align:center;font-weight:800;font-size:15px;
+letter-spacing:1.5px;text-transform:uppercase;margin:0 0 24px;
+box-shadow:0 0 18px rgba(255,42,157,.35),inset 0 0 12px rgba(255,42,157,.12)}
+h1{font-size:clamp(24px,5vw,42px);text-align:center;line-height:1.2;letter-spacing:3px;
+background:linear-gradient(90deg,var(--vw-pink),var(--vw-pastel),var(--vw-cyan));
+-webkit-background-clip:text;background-clip:text;color:transparent;
+filter:drop-shadow(0 2px 12px rgba(1,205,254,.35));margin-bottom:6px}
+.sub{color:var(--vw-dim);text-align:center;margin:8px auto 24px;max-width:760px;font-size:14.5px}
+.legend{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 30px}
+.chip{background:var(--vw-card);border:1px solid var(--vw-line);border-radius:999px;
+padding:6px 13px;font-size:12.5px;color:var(--vw-pastel)}
+.chip b{color:var(--vw-cream)}
+h2{font-size:22px;margin:32px 0 6px;display:flex;align-items:center;gap:10px;
+color:var(--vw-cyan);letter-spacing:1px;text-shadow:0 0 10px rgba(1,205,254,.4)}
+h2 .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--vw-magenta),var(--vw-cyan),transparent)}
+.h2sub{color:var(--vw-dim);font-size:13.5px;margin-bottom:16px}
+.picks,.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.pick{background:linear-gradient(150deg,var(--vw-card2),var(--vw-card));
+border:1px solid var(--vw-line);border-radius:14px;padding:16px;position:relative;
+overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.pick.hot{border-color:var(--vw-teal);box-shadow:0 0 0 1px rgba(5,255,161,.5),0 0 22px rgba(5,255,161,.18)}
+.pick.hit{border-color:var(--vw-teal)}.pick.miss{border-color:var(--vw-magenta)}
+.edge{position:absolute;top:12px;right:12px;background:var(--vw-teal);color:#03301d;
+font-weight:900;font-size:17px;border-radius:10px;padding:5px 10px;
+box-shadow:0 0 14px rgba(5,255,161,.5)}
+.stamp{position:absolute;top:12px;right:12px;font-weight:900;font-size:15px;
+border-radius:10px;padding:5px 10px}
+.stamp.hit{background:var(--vw-teal);color:#03301d}.stamp.miss{background:var(--vw-magenta);color:#33021c}
+.stamp.push{background:var(--vw-pastel);color:#1b1b3a}
+.pick .what{font-size:17.5px;font-weight:800;margin:0 76px 6px 0;line-height:1.3}
+.pick .odds,.pick .res{color:var(--vw-cream);font-weight:700;font-size:13.5px;margin-bottom:5px}
+.pick .nums,.pick .agg{color:var(--vw-dim);font-size:13px;margin-bottom:7px}
+.pick .cheer{font-size:13.5px;background:rgba(255,255,255,.05);border-radius:9px;padding:7px 9px}
+.pick .meta{color:var(--vw-dim);font-size:12px;margin-top:9px}
+.lowconf{display:inline-block;background:rgba(255,251,150,.12);color:var(--vw-cream);
+border:1px solid var(--vw-cream);border-radius:999px;font-size:11px;padding:2px 8px;margin-left:6px}
+.mega{grid-column:1/-1;background:linear-gradient(135deg,#2a1608,var(--vw-card2));
+border:2px solid var(--vw-cream);border-radius:16px;padding:18px}
+.mega .what{font-size:21px;font-weight:900;color:var(--vw-cream)}
+.mega .explain,.mega .verdict{color:var(--vw-dim);font-size:13.5px;margin:8px 0 12px}
+.mega table{width:100%;border-collapse:collapse;font-size:13px}
+.mega td{padding:5px 8px;border-bottom:1px dashed var(--vw-line)}
+.mega td.e{color:var(--vw-teal);font-weight:700;text-align:right}
+.day{margin-top:34px}
+.match{background:var(--vw-card);border:1px solid var(--vw-line);border-radius:14px;
+padding:14px 16px;margin:12px 0}
+.match h3{font-size:16.5px;margin-bottom:2px}
+.match .aggline{color:var(--vw-dim);font-size:12.5px;margin-bottom:9px}
+.match table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+.match th{color:var(--vw-cyan);text-align:left;font-weight:600;font-size:11px;
+text-transform:uppercase;letter-spacing:.8px;padding:4px 8px;border-bottom:1px solid var(--vw-line)}
+.match td{padding:6px 8px;border-bottom:1px solid #2c1a58}
+.match tr.flag td{background:rgba(5,255,161,.09)}
+.match tr.flag td:first-child{border-left:3px solid var(--vw-teal)}
+.badge{font-weight:800;color:var(--vw-teal)}
+.pass{color:var(--vw-dim)}
+.quip{color:var(--vw-dim);font-size:12.5px;font-style:italic;margin-top:8px}
+.nobov{opacity:.75;border-style:dashed}
+.kick{color:var(--vw-cream);font-weight:700}
+.score{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:0 0 8px}
+.tile{background:var(--vw-card);border:1px solid var(--vw-line);border-radius:14px;
+padding:14px 20px;text-align:center;min-width:140px}
+.tile .big{font-size:28px;font-weight:900;color:var(--vw-cyan)}
+.tile .lbl{color:var(--vw-dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.8px}
+.nerd{color:var(--vw-dim);text-align:center;font-size:13px;margin:8px 0 26px}
+.autopsy{background:#22052e;border:2px dashed var(--vw-magenta);border-radius:14px;padding:16px;margin-top:14px}
+.autopsy h3{color:var(--vw-pink);font-size:17px;margin-bottom:8px}
+.autopsy .case{margin:9px 0;font-size:13.5px}
+.autopsy .lbl{color:var(--vw-dim);font-size:12px;font-style:italic}
+.chaos li,.passes li{margin:8px 0 8px 18px;font-size:13.5px}
+.passes .hind{color:var(--vw-dim);font-style:italic}
+.notes{background:var(--vw-card);border-radius:12px;border:1px solid var(--vw-line);
+padding:14px 16px;font-size:13.5px;color:var(--vw-dim);margin:30px 0 20px}
+.notes b{color:var(--vw-ink)}
+td.r{text-align:right}.e{color:var(--vw-teal);font-weight:700}
+footer{margin-top:40px}
+@media(max-width:640px){.match table{display:block;overflow-x:auto}
+.picks,.cards{grid-template-columns:1fr}}
+
+.v{display:inline-block;font-weight:900;font-size:10.5px;letter-spacing:1.2px;
+border-radius:6px;padding:1px 7px;vertical-align:middle}
+.v.hit{background:rgba(5,255,161,.14);color:var(--vw-teal);
+border:1px solid var(--vw-teal);box-shadow:0 0 10px rgba(5,255,161,.45)}
+.v.miss{background:rgba(255,42,157,.14);color:var(--vw-pink);
+border:1px solid var(--vw-magenta);box-shadow:0 0 10px rgba(255,42,157,.45)}
+.v.push{background:rgba(184,192,255,.12);color:var(--vw-pastel);
+border:1px solid var(--vw-pastel)}
+.edge.vhit{background:var(--vw-teal);color:#03301d;font-size:12px;
+box-shadow:0 0 18px rgba(5,255,161,.65)}
+.edge.vmiss{background:var(--vw-magenta);color:#33021c;font-size:12px;
+box-shadow:0 0 18px rgba(255,42,157,.65)}
+.edge.vpush{background:var(--vw-pastel);color:#1b1b3a;font-size:12px}
+.pick.vhit-card{border-color:var(--vw-teal);
+box-shadow:0 0 0 1px rgba(5,255,161,.45),0 0 22px rgba(5,255,161,.22)}
+.pick.vmiss-card{border-color:var(--vw-magenta);
+box-shadow:0 0 0 1px rgba(255,42,157,.45),0 0 22px rgba(255,42,157,.22)}
+.pick.hit{box-shadow:0 0 0 1px rgba(5,255,161,.45),0 0 22px rgba(5,255,161,.22)}
+.pick.miss{box-shadow:0 0 0 1px rgba(255,42,157,.45),0 0 22px rgba(255,42,157,.22)}
+.stamp.hit{box-shadow:0 0 16px rgba(5,255,161,.6)}
+.stamp.miss{box-shadow:0 0 16px rgba(255,42,157,.6)}
+.recstrip{display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+justify-content:center;margin:-6px 0 22px}
+.recstrip .rec{font-size:clamp(22px,6vw,34px);font-weight:900;letter-spacing:2px;
+background:linear-gradient(90deg,var(--vw-teal),var(--vw-cream),var(--vw-pink));
+-webkit-background-clip:text;background-clip:text;color:transparent;
+filter:drop-shadow(0 0 10px rgba(5,255,161,.3))}
+.recstrip .pips{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.recstrip .pip{width:10px;height:10px;border-radius:50%;display:inline-block}
+.pip.hit{background:var(--vw-teal);box-shadow:0 0 7px rgba(5,255,161,.85)}
+.pip.miss{background:var(--vw-magenta);box-shadow:0 0 7px rgba(255,42,157,.85)}
+.pip.push{background:var(--vw-pastel)}
+</style></head><body><div class="wrap">
+<div class="banner">PAPER — TRACKED POSITIONS · ZERO STAKES · MODEL UNDER EVALUATION · NOT BETTING ADVICE</div>
+<h1>Watchlist — Champions League QR2 · Jul 21, 2026</h1>
+<p class="sub">First live paper matchday: model vs market from the stored opener, positions tracked once each, zero stakes. The evaluation clock is running.</p>
+<div class="legend"><span class="chip">🟢 <b>PICK/FLAG</b> = model disagrees with Bovada ≥ threshold (a paper-tracked <b>opinion</b>, not a bet)</span><span class="chip">🍿 <b>PASS</b> = model &amp; market agree — popcorn only</span><span class="chip">📋 <b>PAPER</b> = counts toward the D-02 gate (positions, not rows)</span><span class="chip">🟠 low-confidence club → thresholds <b>doubled</b></span><span class="chip">📵 no Bovada line → model stays quiet</span></div>
+<h2>🎯 THE PICKS <span class="rule"></span></h2>
+<p class="h2sub">13 solo bangers + 2 mega-opinion in a trenchcoat. All paper, all loud. Sorted by edge — the bigger the number, the harder Edge Reports cheer.</p>
+<div class="picks">
+<div class="pick hot"><div class="edge">+12.1%</div>
+<div class="what">DRAW: Larne 🤝 Red Star Belgrade</div>
+<div class="odds">@ 8.0 on Bovada</div>
+<div class="nums">model <b>22.2%</b> vs devigged market 10.1% · threshold 4%</div>
+<div class="cheer">The numbers side with we are DRAW ENJOYERS tonight. stalemate szn!! 🤝✨</div>
+<div class="meta">🕐 <span class="kick">Tue 02:00 PM CT</span> · Larne v Red Star Belgrade · <code>1X2:Draw</code></div>
+</div>
+<div class="pick hot"><div class="edge">+10.5%</div>
+<div class="what">DRAW: Fenerbahce 🤝 Gornik Zabrze</div>
+<div class="odds">@ 6.0 on Bovada</div>
+<div class="nums">model <b>25.2%</b> vs devigged market 14.7% · threshold 4%</div>
+<div class="cheer">🎉 handshakes & shared points please — cozy draw energy 🤝🧣</div>
+<div class="meta">🕐 <span class="kick">Tue 01:00 PM CT</span> · Fenerbahce v Gornik Zabrze · <code>1X2:Draw</code></div>
+</div>
+<div class="pick hot"><div class="edge">+8.2%</div>
+<div class="what">DRAW: Sabah 🤝 KuPS</div>
+<div class="odds">@ 4.4 on Bovada</div>
+<div class="nums">model <b>29.2%</b> vs devigged market 21.0% · threshold 4%</div>
+<div class="cheer">The model expects a stalemate.</div>
+<div class="meta">🕐 <span class="kick">Tue 11:00 AM CT</span> · Sabah v KuPS · <code>1X2:Draw</code></div>
+</div>
+<div class="pick hot"><div class="edge">+8.1%</div>
+<div class="what">KI KLAKSVIK to beat Kauno Zalgiris</div>
+<div class="odds">@ 2.35 on Bovada</div>
+<div class="nums">model <b>49.1%</b> vs devigged market 41.0% · threshold 4%</div>
+<div class="cheer">Model's strongest lean of the group: KI Klaksvik.</div>
+<div class="meta">🕐 <span class="kick">Tue 01:45 PM CT</span> · KI Klaksvik v Kauno Zalgiris · <code>1X2:KI Klaksvik (H)</code></div>
+</div>
+<div class="pick"><div class="edge">+7.1%</div>
+<div class="what">THUN to beat Dinamo Zagreb</div>
+<div class="odds">@ 3.4 on Bovada</div>
+<div class="nums">model <b>35.0%</b> vs devigged market 27.9% · threshold 4%</div>
+<div class="cheer">The model likes Thun here. Now the football gets a vote.</div>
+<div class="meta">🕐 <span class="kick">Tue 01:00 PM CT</span> · Thun v Dinamo Zagreb · <code>1X2:Thun (H)</code></div>
+</div>
+<div class="pick"><div class="edge">+6.7%</div>
+<div class="what">HAPOEL BEER SHEVA to beat Vikingur Reykjavik</div>
+<div class="odds">@ 2.85 on Bovada</div>
+<div class="nums">model <b>40.3%</b> vs devigged market 33.6% · threshold 4%</div>
+<div class="cheer">A quiet lean: Hapoel Beer Sheva.</div>
+<div class="meta">🕐 <span class="kick">Tue 02:00 PM CT</span> · Vikingur Reykjavik v Hapoel Beer Sheva · <code>1X2:Hapoel Beer Sheva (A)</code></div>
+</div>
+<div class="pick"><div class="edge">+5.2%</div>
+<div class="what">DRAW: Thun 🤝 Dinamo Zagreb</div>
+<div class="odds">@ 3.8 on Bovada</div>
+<div class="nums">model <b>30.1%</b> vs devigged market 24.8% · threshold 4%</div>
+<div class="cheer">A draw, says the math. Handshakes all round.</div>
+<div class="meta">🕐 <span class="kick">Tue 01:00 PM CT</span> · Thun v Dinamo Zagreb · <code>1X2:Draw</code></div>
+</div>
+<div class="pick"><div class="edge">+5.1%</div>
+<div class="what">GORNIK ZABRZE to beat Fenerbahce</div>
+<div class="odds">@ 10.0 on Bovada</div>
+<div class="nums">model <b>13.6%</b> vs devigged market 8.5% · threshold 4%</div>
+<div class="cheer">🎉 Gornik Zabrze.</div>
+<div class="meta">🕐 <span class="kick">Tue 01:00 PM CT</span> · Fenerbahce v Gornik Zabrze · <code>1X2:Gornik Zabrze (A)</code></div>
+</div>
+<div class="pick"><div class="edge">+4.8%</div>
+<div class="what">LARNE to beat Red Star Belgrade</div>
+<div class="odds">@ 18.0 on Bovada</div>
+<div class="nums">model <b>9.0%</b> vs devigged market 4.1% · threshold 4%</div>
+<div class="cheer">Model's strongest lean of the group: Larne.</div>
+<div class="meta">🕐 <span class="kick">Tue 02:00 PM CT</span> · Larne v Red Star Belgrade · <code>1X2:Larne (H)</code></div>
+</div>
+<div class="pick"><div class="edge">+4.6%</div>
+<div class="what">AGF to beat Lech Poznan</div>
+<div class="odds">@ 2.15 on Bovada</div>
+<div class="nums">model <b>49.4%</b> vs devigged market 44.8% · threshold 4%</div>
+<div class="cheer">The model likes AGF here. Now the football gets a vote.</div>
+<div class="meta">🕐 <span class="kick">Tue 12:00 PM CT</span> · AGF v Lech Poznan · <code>1X2:AGF (H)</code></div>
+</div>
+<div class="pick"><div class="edge">+4.6%</div>
+<div class="what">DRAW: Iberia 1999 🤝 Slovan Bratislava</div>
+<div class="odds">@ 3.75 on Bovada</div>
+<div class="nums">model <b>29.5%</b> vs devigged market 25.0% · threshold 4%</div>
+<div class="cheer">🎉 handshakes & shared points please — cozy draw energy 🤝🧣</div>
+<div class="meta">🕐 <span class="kick">Tue 11:00 AM CT</span> · Iberia 1999 v Slovan Bratislava · <code>1X2:Draw</code></div>
+</div>
+<div class="pick"><div class="edge">+4.3%</div>
+<div class="what">KUPS to beat Sabah</div>
+<div class="odds">@ 4.4 on Bovada</div>
+<div class="nums">model <b>25.3%</b> vs devigged market 21.0% · threshold 4%</div>
+<div class="cheer">A quiet lean: KuPS.</div>
+<div class="meta">🕐 <span class="kick">Tue 11:00 AM CT</span> · Sabah v KuPS · <code>1X2:KuPS (A)</code></div>
+</div>
+<div class="pick"><div class="edge">+4.2%</div>
+<div class="what">DRAW: Mjallby 🤝 Lincoln Red Imps</div>
+<div class="odds">@ 7.0 on Bovada</div>
+<div class="nums">model <b>16.3%</b> vs devigged market 12.2% · threshold 4%</div>
+<div class="cheer">The model expects a stalemate.</div>
+<div class="meta">🕐 <span class="kick">Tue 11:00 AM CT</span> · Mjallby v Lincoln Red Imps · <code>1X2:Draw</code></div>
+</div>
+<div class="mega">
+<div class="what">🎩 THE UNDERS CLUSTER — one opinion wearing 8 hats</div>
+<div class="explain">All 8 flagged Unders are the <b>same</b> model belief (avg_total_goals says qualifying runs cold; Bovada disagrees). Per D-07 they collapse to <b>ONE paper position</b> (counts once toward the D-02 gate) (<code>under</code>) — if it's wrong once, it's wrong everywhere, so it only counts once. Average model confidence 61%. Root for scoreless second halves across the whole continent! 🥶⚽</div>
+<table>
+<tr><td>Mjallby v Lincoln Red Imps</td><td>Under 3.5 @ 1.65</td><td class="r">model 75% vs 58%</td><td class="e">+17.3%</td></tr>
+<tr><td>Fenerbahce v Gornik Zabrze</td><td>Under 3.0 @ 1.83</td><td class="r">model 68% vs 51%</td><td class="e">+16.8%</td></tr>
+<tr><td>Larne v Red Star Belgrade</td><td>Under 3.5 @ 1.62</td><td class="r">model 75% vs 58%</td><td class="e">+16.5%</td></tr>
+<tr><td>Thun v Dinamo Zagreb</td><td>Under 2.5 @ 2.23</td><td class="r">model 53% vs 41%</td><td class="e">+12.3%</td></tr>
+<tr><td>Sabah v KuPS</td><td>Under 2.5 @ 2.2</td><td class="r">model 53% vs 42%</td><td class="e">+11.8%</td></tr>
+<tr><td>Iberia 1999 v Slovan Bratislava</td><td>Under 2.5 @ 2.1</td><td class="r">model 53% vs 44%</td><td class="e">+9.3%</td></tr>
+<tr><td>Vikingur Reykjavik v Hapoel Beer Sheva</td><td>Under 2.5 @ 2.05</td><td class="r">model 53% vs 46%</td><td class="e">+7.8%</td></tr>
+<tr><td>Sturm Graz v Hearts</td><td>Under 2.5 @ 1.98</td><td class="r">model 53% vs 47%</td><td class="e">+6.3%</td></tr>
+</table></div>
+<div class="mega">
+<div class="what">🎩 THE OVERS CLUSTER — one opinion wearing 2 hats</div>
+<div class="explain">All 2 flagged Overs are the <b>same</b> model belief (avg_total_goals says qualifying runs cold; Bovada disagrees). Per D-07 they collapse to <b>ONE paper position</b> (counts once toward the D-02 gate) (<code>over</code>) — if it's wrong once, it's wrong everywhere, so it only counts once. Average model confidence 47%. Root for scoreless second halves across the whole continent! 🥶⚽</div>
+<table>
+<tr><td>KI Klaksvik v Kauno Zalgiris</td><td>Over 2.5 @ 2.35</td><td class="r">model 47% vs 39%</td><td class="e">+7.8%</td></tr>
+<tr><td>AGF v Lech Poznan</td><td>Over 2.5 @ 2.25</td><td class="r">model 47% vs 41%</td><td class="e">+5.8%</td></tr>
+</table></div>
+</div>
+<div class="day"><h2>🌙 TONIGHT — Tue Jul 21 (US Central) <span class="rule"></span></h2>
+<div class="match nobov"><h3>📵 Ararat-Armenia v Shamrock Rovers
+<span class="kick">· 11:00 AM CT</span></h3>
+<div class="aggline">Bovada never posted this one — no paper selections exist. Watching only. 🔭</div></div>
+<div class="match"><h3>Iberia 1999 v Slovan Bratislava
+<span class="kick">· 11:00 AM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>1X2</td><td>Draw</td><td class="r">29.5%</td><td class="r">25.0%</td><td class="r">+4.6%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td class="r">44.0%</td><td class="r">+9.3%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+<div class="match"><h3>Sabah v KuPS
+<span class="kick">· 11:00 AM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>1X2</td><td>Draw</td><td class="r">29.2%</td><td class="r">21.0%</td><td class="r">+8.2%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>1X2</td><td>KuPS (A)</td><td class="r">25.3%</td><td class="r">21.0%</td><td class="r">+4.3%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td class="r">41.6%</td><td class="r">+11.8%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+<div class="match"><h3>Mjallby v Lincoln Red Imps
+<span class="kick">· 11:00 AM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>1X2</td><td>Draw</td><td class="r">16.3%</td><td class="r">12.2%</td><td class="r">+4.2%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>O/U 3.5</td><td>Under 3.5</td><td class="r">74.9%</td><td class="r">57.6%</td><td class="r">+17.3%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+<div class="match"><h3>AGF v Lech Poznan
+<span class="kick">· 12:00 PM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>1X2</td><td>AGF (H)</td><td class="r">49.4%</td><td class="r">44.8%</td><td class="r">+4.6%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>O/U 2.5</td><td>Over 2.5</td><td class="r">46.6%</td><td class="r">40.9%</td><td class="r">+5.8%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+<div class="match"><h3>Thun v Dinamo Zagreb
+<span class="kick">· 01:00 PM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>1X2</td><td>Draw</td><td class="r">30.1%</td><td class="r">24.8%</td><td class="r">+5.2%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>1X2</td><td>Thun (H)</td><td class="r">35.0%</td><td class="r">27.9%</td><td class="r">+7.1%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td class="r">41.1%</td><td class="r">+12.3%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+<div class="match"><h3>Fenerbahce v Gornik Zabrze
+<span class="kick">· 01:00 PM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>1X2</td><td>Draw</td><td class="r">25.2%</td><td class="r">14.7%</td><td class="r">+10.5%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>1X2</td><td>Gornik Zabrze (A)</td><td class="r">13.6%</td><td class="r">8.5%</td><td class="r">+5.1%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>O/U 3.0</td><td>Under 3.0</td><td class="r">68.0%</td><td class="r">51.2%</td><td class="r">+16.8%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+<div class="match"><h3>Sturm Graz v Hearts
+<span class="kick">· 01:30 PM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td class="r">47.1%</td><td class="r">+6.3%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+<div class="match"><h3>KI Klaksvik v Kauno Zalgiris
+<span class="kick">· 01:45 PM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>1X2</td><td>KI Klaksvik (H)</td><td class="r">49.1%</td><td class="r">41.0%</td><td class="r">+8.1%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>O/U 2.5</td><td>Over 2.5</td><td class="r">46.6%</td><td class="r">38.9%</td><td class="r">+7.8%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+<div class="match"><h3>Vikingur Reykjavik v Hapoel Beer Sheva
+<span class="kick">· 02:00 PM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>1X2</td><td>Hapoel Beer Sheva (A)</td><td class="r">40.3%</td><td class="r">33.6%</td><td class="r">+6.7%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>O/U 2.5</td><td>Under 2.5</td><td class="r">53.4%</td><td class="r">45.5%</td><td class="r">+7.8%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+<div class="match"><h3>Larne v Red Star Belgrade
+<span class="kick">· 02:00 PM CT</span> </h3>
+<div class="aggline">_QR leg 1 — no aggregate state yet._</div>
+<table><tr><th>Market</th><th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Verdict</th></tr>
+<tr class="flag"><td>1X2</td><td>Draw</td><td class="r">22.2%</td><td class="r">10.1%</td><td class="r">+12.1%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>1X2</td><td>Larne (H)</td><td class="r">9.0%</td><td class="r">4.1%</td><td class="r">+4.8%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+<tr class="flag"><td>O/U 3.5</td><td>Under 3.5</td><td class="r">74.9%</td><td class="r">58.4%</td><td class="r">+16.5%</td><td><span class="badge">🟢 PICK</span> <span class="pass">(thr 4%)</span></td></tr>
+</table>
+</div>
+</div>
+<div class="day"><h2>🌅 TOMORROW — Wed Jul 22 (US Central) <span class="rule"></span></h2>
+<div class="match nobov"><h3>📵 Omonia v Kairat
+<span class="kick">· 12:00 PM CT</span></h3>
+<div class="aggline">Bovada never posted this one — no paper selections exist. Watching only. 🔭</div></div>
+<div class="match nobov"><h3>📵 Levski Sofia v Universitatea Craiova
+<span class="kick">· 12:30 PM CT</span></h3>
+<div class="aggline">Bovada never posted this one — no paper selections exist. Watching only. 🔭</div></div>
+<div class="match nobov"><h3>📵 Egnatia v Celje
+<span class="kick">· 02:00 PM CT</span></h3>
+<div class="aggline">Bovada never posted this one — no paper selections exist. Watching only. 🔭</div></div>
+</div>
+<footer>
+<div class="notes"><b>📝 Couch footnotes:</b><br>⚽ <b>Goalscorer markets are NOT modeled yet</b> (M5). Zero scorer flags exist — any scorer bets are pure human vibes, not system output. <br>📋 Every position here is <b>paper tier</b>: it counts toward the D-02 gate (once per position, D-07) and the CLV record. Still zero money — the gate opens on evidence, not enthusiasm.</div>
+<div class="banner">PAPER — TRACKED POSITIONS · ZERO STAKES · MODEL UNDER EVALUATION · NOT BETTING ADVICE</div>
+</footer>
+</div></body></html>
