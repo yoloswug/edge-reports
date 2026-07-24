@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLB Game-Market Leans · Jul 24, 2026</title>
+<style>
+:root{--vw-bg1:#0d0221;--vw-bg2:#1b0b45;--vw-bg3:#2a0e5e;--vw-pink:#ff71ce;--vw-magenta:#ff2a9d;--vw-cyan:#01cdfe;--vw-teal:#05ffa1;--vw-pastel:#b8c0ff;--vw-cream:#fffb96;--vw-ink:#f5f0ff;--vw-dim:#a99cd6;--vw-card:#180836;--vw-card2:#22104a;--vw-line:#4b2a8a;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--vw-ink);
+background:linear-gradient(175deg,var(--vw-bg1) 0%,var(--vw-bg2) 55%,var(--vw-bg3));
+min-height:100vh;padding:20px 12px 56px}
+.wrap{max-width:1080px;margin:0 auto}
+.banner{background:#12042e;border:2px solid var(--vw-magenta);color:var(--vw-pink);
+border-radius:12px;padding:12px 18px;text-align:center;font-weight:800;font-size:15px;
+letter-spacing:1.5px;text-transform:uppercase;margin:0 0 24px;
+box-shadow:0 0 18px rgba(255,42,157,.35),inset 0 0 12px rgba(255,42,157,.12)}
+h1{font-size:clamp(24px,5vw,42px);text-align:center;line-height:1.2;letter-spacing:3px;
+background:linear-gradient(90deg,var(--vw-pink),var(--vw-pastel),var(--vw-cyan));
+-webkit-background-clip:text;background-clip:text;color:transparent;
+filter:drop-shadow(0 2px 12px rgba(1,205,254,.35));margin-bottom:6px}
+.sub{color:var(--vw-dim);text-align:center;margin:8px auto 24px;max-width:760px;font-size:14.5px}
+.legend{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 30px}
+.chip{background:var(--vw-card);border:1px solid var(--vw-line);border-radius:999px;
+padding:6px 13px;font-size:12.5px;color:var(--vw-pastel)}
+.chip b{color:var(--vw-cream)}
+h2{font-size:22px;margin:32px 0 6px;display:flex;align-items:center;gap:10px;
+color:var(--vw-cyan);letter-spacing:1px;text-shadow:0 0 10px rgba(1,205,254,.4)}
+h2 .rule{flex:1;height:2px;background:linear-gradient(90deg,var(--vw-magenta),var(--vw-cyan),transparent)}
+.h2sub{color:var(--vw-dim);font-size:13.5px;margin-bottom:16px}
+.picks,.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.pick{background:linear-gradient(150deg,var(--vw-card2),var(--vw-card));
+border:1px solid var(--vw-line);border-radius:14px;padding:16px;position:relative;
+overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.pick.hot{border-color:var(--vw-teal);box-shadow:0 0 0 1px rgba(5,255,161,.5),0 0 22px rgba(5,255,161,.18)}
+.pick.hit{border-color:var(--vw-teal)}.pick.miss{border-color:var(--vw-magenta)}
+.edge{position:absolute;top:12px;right:12px;background:var(--vw-teal);color:#03301d;
+font-weight:900;font-size:17px;border-radius:10px;padding:5px 10px;
+box-shadow:0 0 14px rgba(5,255,161,.5)}
+.stamp{position:absolute;top:12px;right:12px;font-weight:900;font-size:15px;
+border-radius:10px;padding:5px 10px}
+.stamp.hit{background:var(--vw-teal);color:#03301d}.stamp.miss{background:var(--vw-magenta);color:#33021c}
+.stamp.push{background:var(--vw-pastel);color:#1b1b3a}
+.pick .what{font-size:17.5px;font-weight:800;margin:0 76px 6px 0;line-height:1.3}
+.pick .odds,.pick .res{color:var(--vw-cream);font-weight:700;font-size:13.5px;margin-bottom:5px}
+.pick .nums,.pick .agg{color:var(--vw-dim);font-size:13px;margin-bottom:7px}
+.pick .cheer{font-size:13.5px;background:rgba(255,255,255,.05);border-radius:9px;padding:7px 9px}
+.pick .meta{color:var(--vw-dim);font-size:12px;margin-top:9px}
+.lowconf{display:inline-block;background:rgba(255,251,150,.12);color:var(--vw-cream);
+border:1px solid var(--vw-cream);border-radius:999px;font-size:11px;padding:2px 8px;margin-left:6px}
+.mega{grid-column:1/-1;background:linear-gradient(135deg,#2a1608,var(--vw-card2));
+border:2px solid var(--vw-cream);border-radius:16px;padding:18px}
+.mega .what{font-size:21px;font-weight:900;color:var(--vw-cream)}
+.mega .explain,.mega .verdict{color:var(--vw-dim);font-size:13.5px;margin:8px 0 12px}
+.mega table{width:100%;border-collapse:collapse;font-size:13px}
+.mega td{padding:5px 8px;border-bottom:1px dashed var(--vw-line)}
+.mega td.e{color:var(--vw-teal);font-weight:700;text-align:right}
+.day{margin-top:34px}
+.match{background:var(--vw-card);border:1px solid var(--vw-line);border-radius:14px;
+padding:14px 16px;margin:12px 0}
+.match h3{font-size:16.5px;margin-bottom:2px}
+.match .aggline{color:var(--vw-dim);font-size:12.5px;margin-bottom:9px}
+.match table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+.match th{color:var(--vw-cyan);text-align:left;font-weight:600;font-size:11px;
+text-transform:uppercase;letter-spacing:.8px;padding:4px 8px;border-bottom:1px solid var(--vw-line)}
+.match td{padding:6px 8px;border-bottom:1px solid #2c1a58}
+.match tr.flag td{background:rgba(5,255,161,.09)}
+.match tr.flag td:first-child{border-left:3px solid var(--vw-teal)}
+.badge{font-weight:800;color:var(--vw-teal)}
+.pass{color:var(--vw-dim)}
+.quip{color:var(--vw-dim);font-size:12.5px;font-style:italic;margin-top:8px}
+.nobov{opacity:.75;border-style:dashed}
+.kick{color:var(--vw-cream);font-weight:700}
+.score{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:0 0 8px}
+.tile{background:var(--vw-card);border:1px solid var(--vw-line);border-radius:14px;
+padding:14px 20px;text-align:center;min-width:140px}
+.tile .big{font-size:28px;font-weight:900;color:var(--vw-cyan)}
+.tile .lbl{color:var(--vw-dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.8px}
+.nerd{color:var(--vw-dim);text-align:center;font-size:13px;margin:8px 0 26px}
+.autopsy{background:#22052e;border:2px dashed var(--vw-magenta);border-radius:14px;padding:16px;margin-top:14px}
+.autopsy h3{color:var(--vw-pink);font-size:17px;margin-bottom:8px}
+.autopsy .case{margin:9px 0;font-size:13.5px}
+.autopsy .lbl{color:var(--vw-dim);font-size:12px;font-style:italic}
+.chaos li,.passes li{margin:8px 0 8px 18px;font-size:13.5px}
+.passes .hind{color:var(--vw-dim);font-style:italic}
+.notes{background:var(--vw-card);border-radius:12px;border:1px solid var(--vw-line);
+padding:14px 16px;font-size:13.5px;color:var(--vw-dim);margin:30px 0 20px}
+.notes b{color:var(--vw-ink)}
+td.r{text-align:right}.e{color:var(--vw-teal);font-weight:700}
+footer{margin-top:40px}
+@media(max-width:640px){.match table{display:block;overflow-x:auto}
+.picks,.cards{grid-template-columns:1fr}}
+
+.v{display:inline-block;font-weight:900;font-size:10.5px;letter-spacing:1.2px;
+border-radius:6px;padding:1px 7px;vertical-align:middle}
+.v.hit{background:rgba(5,255,161,.14);color:var(--vw-teal);
+border:1px solid var(--vw-teal);box-shadow:0 0 10px rgba(5,255,161,.45)}
+.v.miss{background:rgba(255,42,157,.14);color:var(--vw-pink);
+border:1px solid var(--vw-magenta);box-shadow:0 0 10px rgba(255,42,157,.45)}
+.v.push{background:rgba(184,192,255,.12);color:var(--vw-pastel);
+border:1px solid var(--vw-pastel)}
+.edge.vhit{background:var(--vw-teal);color:#03301d;font-size:12px;
+box-shadow:0 0 18px rgba(5,255,161,.65)}
+.edge.vmiss{background:var(--vw-magenta);color:#33021c;font-size:12px;
+box-shadow:0 0 18px rgba(255,42,157,.65)}
+.edge.vpush{background:var(--vw-pastel);color:#1b1b3a;font-size:12px}
+.pick.vhit-card{border-color:var(--vw-teal);
+box-shadow:0 0 0 1px rgba(5,255,161,.45),0 0 22px rgba(5,255,161,.22)}
+.pick.vmiss-card{border-color:var(--vw-magenta);
+box-shadow:0 0 0 1px rgba(255,42,157,.45),0 0 22px rgba(255,42,157,.22)}
+.pick.hit{box-shadow:0 0 0 1px rgba(5,255,161,.45),0 0 22px rgba(5,255,161,.22)}
+.pick.miss{box-shadow:0 0 0 1px rgba(255,42,157,.45),0 0 22px rgba(255,42,157,.22)}
+.stamp.hit{box-shadow:0 0 16px rgba(5,255,161,.6)}
+.stamp.miss{box-shadow:0 0 16px rgba(255,42,157,.6)}
+.recstrip{display:flex;flex-wrap:wrap;align-items:center;gap:12px;
+justify-content:center;margin:-6px 0 22px}
+.recstrip .rec{font-size:clamp(22px,6vw,34px);font-weight:900;letter-spacing:2px;
+background:linear-gradient(90deg,var(--vw-teal),var(--vw-cream),var(--vw-pink));
+-webkit-background-clip:text;background-clip:text;color:transparent;
+filter:drop-shadow(0 0 10px rgba(5,255,161,.3))}
+.recstrip .pips{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.recstrip .pip{width:10px;height:10px;border-radius:50%;display:inline-block}
+.pip.hit{background:var(--vw-teal);box-shadow:0 0 7px rgba(5,255,161,.85)}
+.pip.miss{background:var(--vw-magenta);box-shadow:0 0 7px rgba(255,42,157,.85)}
+.pip.push{background:var(--vw-pastel)}
+</style></head><body><div class="wrap">
+<div class="banner">SHADOW — v0 DIAGNOSTIC — NOT BETS — NOT BOARD-ELIGIBLE — PAPER ONLY · NOT BETTING ADVICE</div>
+<h1>MLB Game-Market Leans · Jul 24, 2026</h1>
+<p class="sub">A one-night, crude-on-purpose baseball model (v0): moneyline and totals leans vs a devigged market consensus, published to see how wrong it is. Every lean is stamped with the probable starters it was computed against.</p>
+<div class="match"><h3>Colorado Rockies @ Milwaukee Brewers<span class="kick">· Fri 03:10 PM CT</span> </h3><div class="aggline">⚾ computed against: Tomoyuki Sugano (adj RA9 4.79) @ Shane Drohan (adj RA9 4.11) · projected total 9.8 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:41+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Colorado Rockies (A) 👉</td><td class="r">33.4%</td><td class="r">30.7%</td><td class="r pos">+2.7%</td></tr><tr><td>ML</td><td>Milwaukee Brewers (H)</td><td class="r">66.6%</td><td class="r">69.3%</td><td class="r neg">-2.7%</td></tr><tr><td>O/U 8.5</td><td>Over 8.5 👉</td><td class="r">64.7%</td><td class="r">49.4%</td><td class="r pos">+15.3%</td></tr><tr><td>O/U 8.5</td><td>Under 8.5</td><td class="r">35.3%</td><td class="r">50.6%</td><td class="r neg">-15.3%</td></tr></table></div>
+<div class="match"><h3>Kansas City Royals @ Detroit Tigers<span class="kick">· Fri 05:40 PM CT</span> </h3><div class="aggline">⚾ computed against: Beck Way (adj RA9 4.50) @ Tarik Skubal (adj RA9 3.73) · projected total 8.2 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:42+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Kansas City Royals (A) 👉</td><td class="r">37.9%</td><td class="r">27.1%</td><td class="r pos">+10.8%</td></tr><tr><td>ML</td><td>Detroit Tigers (H)</td><td class="r">62.1%</td><td class="r">72.9%</td><td class="r neg">-10.8%</td></tr><tr><td>O/U 7.5</td><td>Over 7.5 👉</td><td class="r">57.4%</td><td class="r">50.2%</td><td class="r pos">+7.2%</td></tr><tr><td>O/U 7.5</td><td>Under 7.5</td><td class="r">42.6%</td><td class="r">49.8%</td><td class="r neg">-7.2%</td></tr></table></div>
+<div class="match"><h3>Chicago Cubs @ Pittsburgh Pirates<span class="kick">· Fri 05:40 PM CT</span> </h3><div class="aggline">⚾ computed against: Matthew Boyd (adj RA9 4.43) @ Jared Jones (adj RA9 4.42) · projected total 10.1 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:42+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Chicago Cubs (A)</td><td class="r">46.6%</td><td class="r">46.7%</td><td class="r neg">-0.1%</td></tr><tr><td>ML</td><td>Pittsburgh Pirates (H) 👉</td><td class="r">53.4%</td><td class="r">53.3%</td><td class="r pos">+0.1%</td></tr><tr><td>O/U 8.0</td><td>Over 8.0 👉</td><td class="r">76.4%</td><td class="r">51.2%</td><td class="r pos">+25.2%</td></tr><tr><td>O/U 8.0</td><td>Under 8.0</td><td class="r">23.6%</td><td class="r">48.8%</td><td class="r neg">-25.2%</td></tr></table></div>
+<div class="match"><h3>Arizona Diamondbacks @ Washington Nationals<span class="kick">· Fri 05:45 PM CT</span> </h3><div class="aggline">⚾ computed against: Eduardo Rodriguez (adj RA9 3.37) @ Carson Palmquist (adj RA9 5.19) · projected total 9.7 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:42+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Arizona Diamondbacks (A)</td><td class="r">52.8%</td><td class="r">53.1%</td><td class="r neg">-0.3%</td></tr><tr><td>ML</td><td>Washington Nationals (H) 👉</td><td class="r">47.2%</td><td class="r">46.9%</td><td class="r pos">+0.3%</td></tr><tr><td>O/U 9.5</td><td>Over 9.5 👉</td><td class="r">50.6%</td><td class="r">49.8%</td><td class="r pos">+0.8%</td></tr><tr><td>O/U 9.5</td><td>Under 9.5</td><td class="r">49.4%</td><td class="r">50.2%</td><td class="r neg">-0.8%</td></tr></table></div>
+<div class="match"><h3>New York Yankees @ Philadelphia Phillies<span class="kick">· Fri 05:45 PM CT</span> </h3><div class="aggline">⚾ computed against: Will Warren (adj RA9 4.88) @ Jesús Luzardo (adj RA9 4.11) · projected total 8.8 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:42+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>New York Yankees (A) 👉</td><td class="r">47.9%</td><td class="r">45.0%</td><td class="r pos">+2.9%</td></tr><tr><td>ML</td><td>Philadelphia Phillies (H)</td><td class="r">52.1%</td><td class="r">55.0%</td><td class="r neg">-2.9%</td></tr><tr><td>O/U 8.0</td><td>Over 8.0 👉</td><td class="r">59.2%</td><td class="r">48.9%</td><td class="r pos">+10.3%</td></tr><tr><td>O/U 8.0</td><td>Under 8.0</td><td class="r">40.8%</td><td class="r">51.1%</td><td class="r neg">-10.3%</td></tr></table></div>
+<div class="match"><h3>Atlanta Braves @ Baltimore Orioles<span class="kick">· Fri 06:05 PM CT</span> </h3><div class="aggline">⚾ computed against: Grant Holmes (adj RA9 4.14) @ TBD (no probable listed) (team rate) · projected total 9.2 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:42+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Atlanta Braves (A) 👉</td><td class="r">56.4%</td><td class="r">47.9%</td><td class="r pos">+8.5%</td></tr><tr><td>ML</td><td>Baltimore Orioles (H)</td><td class="r">43.6%</td><td class="r">52.1%</td><td class="r neg">-8.5%</td></tr><tr><td>O/U 9.0</td><td>Over 9.0 👉</td><td class="r">50.4%</td><td class="r">50.1%</td><td class="r pos">+0.3%</td></tr><tr><td>O/U 9.0</td><td>Under 9.0</td><td class="r">49.6%</td><td class="r">49.9%</td><td class="r neg">-0.3%</td></tr></table></div>
+<div class="match"><h3>Los Angeles Dodgers @ New York Mets<span class="kick">· Fri 06:10 PM CT</span> </h3><div class="aggline">⚾ computed against: Roki Sasaki (adj RA9 4.92) @ Sean Manaea (adj RA9 5.10) · projected total 9.5 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:42+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Los Angeles Dodgers (A) 👉</td><td class="r">61.3%</td><td class="r">57.9%</td><td class="r pos">+3.3%</td></tr><tr><td>ML</td><td>New York Mets (H)</td><td class="r">38.7%</td><td class="r">42.1%</td><td class="r neg">-3.3%</td></tr><tr><td>O/U 9.0</td><td>Over 9.0 👉</td><td class="r">55.6%</td><td class="r">49.0%</td><td class="r pos">+6.6%</td></tr><tr><td>O/U 9.0</td><td>Under 9.0</td><td class="r">44.4%</td><td class="r">51.0%</td><td class="r neg">-6.6%</td></tr></table></div>
+<div class="match"><h3>Cleveland Guardians @ Tampa Bay Rays<span class="kick">· Fri 06:10 PM CT</span> </h3><div class="aggline">⚾ computed against: Joey Cantillo (adj RA9 4.34) @ Shane McClanahan (adj RA9 4.12) · projected total 8.0 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:42+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Cleveland Guardians (A)</td><td class="r">41.9%</td><td class="r">43.8%</td><td class="r neg">-2.0%</td></tr><tr><td>ML</td><td>Tampa Bay Rays (H) 👉</td><td class="r">58.1%</td><td class="r">56.2%</td><td class="r pos">+2.0%</td></tr><tr><td>O/U 7.5</td><td>Over 7.5 👉</td><td class="r">55.2%</td><td class="r">48.9%</td><td class="r pos">+6.3%</td></tr><tr><td>O/U 7.5</td><td>Under 7.5</td><td class="r">44.8%</td><td class="r">51.1%</td><td class="r neg">-6.3%</td></tr></table></div>
+<div class="match"><h3>San Diego Padres @ Miami Marlins<span class="kick">· Fri 06:10 PM CT</span> </h3><div class="aggline">⚾ computed against: Germán Márquez (adj RA9 4.91) @ TBD (no probable listed) (team rate) · projected total 8.7 runs · consensus of 5 books incl. Bovada · stamped 2026-07-24T05:23:43+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>San Diego Padres (A)</td><td class="r">40.7%</td><td class="r">44.3%</td><td class="r neg">-3.5%</td></tr><tr><td>ML</td><td>Miami Marlins (H) 👉</td><td class="r">59.3%</td><td class="r">55.7%</td><td class="r pos">+3.5%</td></tr><tr><td>O/U 9.0</td><td>Over 9.0</td><td class="r">43.0%</td><td class="r">48.7%</td><td class="r neg">-5.7%</td></tr><tr><td>O/U 9.0</td><td>Under 9.0 👉</td><td class="r">57.0%</td><td class="r">51.3%</td><td class="r pos">+5.7%</td></tr></table></div>
+<div class="match"><h3>Toronto Blue Jays @ Boston Red Sox<span class="kick">· Fri 06:15 PM CT</span> </h3><div class="aggline">⚾ computed against: Trey Yesavage (adj RA9 4.16) @ Patrick Sandoval (adj RA9 4.69) · projected total 8.0 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:43+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Toronto Blue Jays (A)</td><td class="r">44.8%</td><td class="r">46.6%</td><td class="r neg">-1.8%</td></tr><tr><td>ML</td><td>Boston Red Sox (H) 👉</td><td class="r">55.2%</td><td class="r">53.4%</td><td class="r pos">+1.8%</td></tr><tr><td>O/U 8.5</td><td>Over 8.5</td><td class="r">40.1%</td><td class="r">50.3%</td><td class="r neg">-10.2%</td></tr><tr><td>O/U 8.5</td><td>Under 8.5 👉</td><td class="r">59.9%</td><td class="r">49.7%</td><td class="r pos">+10.2%</td></tr></table></div>
+<div class="match"><h3>Houston Astros @ Chicago White Sox<span class="kick">· Fri 06:40 PM CT</span> </h3><div class="aggline">⚾ computed against: Spencer Arrighetti (adj RA9 4.54) @ Davis Martin (adj RA9 3.75) · projected total 9.0 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:43+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Houston Astros (A)</td><td class="r">37.8%</td><td class="r">44.7%</td><td class="r neg">-6.8%</td></tr><tr><td>ML</td><td>Chicago White Sox (H) 👉</td><td class="r">62.2%</td><td class="r">55.3%</td><td class="r pos">+6.8%</td></tr><tr><td>O/U 8.5</td><td>Over 8.5 👉</td><td class="r">54.3%</td><td class="r">51.9%</td><td class="r pos">+2.5%</td></tr><tr><td>O/U 8.5</td><td>Under 8.5</td><td class="r">45.7%</td><td class="r">48.1%</td><td class="r neg">-2.5%</td></tr></table></div>
+<div class="match"><h3>Seattle Mariners @ Texas Rangers<span class="kick">· Fri 07:05 PM CT</span> </h3><div class="aggline">⚾ computed against: Bryce Miller (adj RA9 3.59) @ MacKenzie Gore (adj RA9 4.70) · projected total 7.7 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:43+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Seattle Mariners (A) 👉</td><td class="r">54.8%</td><td class="r">52.3%</td><td class="r pos">+2.6%</td></tr><tr><td>ML</td><td>Texas Rangers (H)</td><td class="r">45.2%</td><td class="r">47.7%</td><td class="r neg">-2.6%</td></tr><tr><td>O/U 7.5</td><td>Over 7.5</td><td class="r">50.2%</td><td class="r">50.3%</td><td class="r neg">-0.1%</td></tr><tr><td>O/U 7.5</td><td>Under 7.5 👉</td><td class="r">49.8%</td><td class="r">49.7%</td><td class="r pos">+0.1%</td></tr></table></div>
+<div class="match"><h3>Athletics @ Minnesota Twins<span class="kick">· Fri 07:10 PM CT</span> </h3><div class="aggline">⚾ computed against: Jacob Lopez (adj RA9 5.65) @ Zebby Matthews (adj RA9 5.13) · projected total 10.9 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:43+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Athletics (A)</td><td class="r">39.4%</td><td class="r">42.8%</td><td class="r neg">-3.4%</td></tr><tr><td>ML</td><td>Minnesota Twins (H) 👉</td><td class="r">60.6%</td><td class="r">57.2%</td><td class="r pos">+3.4%</td></tr><tr><td>O/U 9.5</td><td>Over 9.5 👉</td><td class="r">65.2%</td><td class="r">50.5%</td><td class="r pos">+14.7%</td></tr><tr><td>O/U 9.5</td><td>Under 9.5</td><td class="r">34.8%</td><td class="r">49.5%</td><td class="r neg">-14.7%</td></tr></table></div>
+<div class="match"><h3>Cincinnati Reds @ St. Louis Cardinals<span class="kick">· Fri 07:15 PM CT</span> </h3><div class="aggline">⚾ computed against: Rhett Lowder (adj RA9 5.26) @ Dustin May (adj RA9 4.85) · projected total 9.4 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:43+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Cincinnati Reds (A) 👉</td><td class="r">41.1%</td><td class="r">39.5%</td><td class="r pos">+1.6%</td></tr><tr><td>ML</td><td>St. Louis Cardinals (H)</td><td class="r">58.9%</td><td class="r">60.5%</td><td class="r neg">-1.6%</td></tr><tr><td>O/U 8.5</td><td>Over 8.5 👉</td><td class="r">59.7%</td><td class="r">48.6%</td><td class="r pos">+11.1%</td></tr><tr><td>O/U 8.5</td><td>Under 8.5</td><td class="r">40.3%</td><td class="r">51.4%</td><td class="r neg">-11.1%</td></tr></table></div>
+<div class="match"><h3>Los Angeles Angels @ San Francisco Giants<span class="kick">· Fri 09:15 PM CT</span> </h3><div class="aggline">⚾ computed against: Grayson Rodriguez (adj RA9 6.08) @ Logan Webb (adj RA9 4.27) · projected total 9.4 runs · consensus of 9 books incl. Bovada · stamped 2026-07-24T05:23:44+00:00</div><table><tr><th>Market</th><th>Outcome</th><th>Model</th><th>Devig</th><th>Edge</th></tr><tr><td>ML</td><td>Los Angeles Angels (A) 👉</td><td class="r">38.6%</td><td class="r">38.4%</td><td class="r pos">+0.2%</td></tr><tr><td>ML</td><td>San Francisco Giants (H)</td><td class="r">61.4%</td><td class="r">61.6%</td><td class="r neg">-0.2%</td></tr><tr><td>O/U 8.0</td><td>Over 8.0 👉</td><td class="r">67.7%</td><td class="r">49.0%</td><td class="r pos">+18.6%</td></tr><tr><td>O/U 8.0</td><td>Under 8.0</td><td class="r">32.3%</td><td class="r">51.0%</td><td class="r neg">-18.6%</td></tr></table></div>
+<div class="notes"><b>💳 Odds:</b> 2 credits spent (h2h+totals, us) — header-verified: used 54, remaining 446, last_cost 2</div>
+<div class="notes"><b>🔧 v0 shortcuts ledger (crude on purpose — the memo indicts these later):</b><br>• Team strength = season-to-date runs scored/allowed per game with a 20-game league-average ballast; no schedule adjustment, no recency weighting, no roster awareness.<br>• Starter adjustment = season RUNS-allowed rate per 9 (not ERA, not FIP), regressed with 60 IP of league average — small samples lie, so the prior is deliberately heavy. Relief innings a listed starter threw count the same as starts.<br>• Starter owns 57% of the defensive game; the remaining 43% is proxied by the TEAM'S overall runs-allowed rate, which itself still contains rotation innings — the bullpen is not separated out in v0.<br>• No probable starter listed = team rate used unadjusted, starters recorded as TBD (the lean says so).<br>• Home advantage = fixed multipliers (1.033/0.967) on expected runs, one number for all 30 parks; NOT fitted.<br>• Win prob = game-level Pythagenpat on expected runs (x = RPG^0.287); totals distribution = independent Poisson per team — real run distributions are lumpier (extra-inning rules, bullpen chaining), so tail probabilities are modestly overconfident toward the mean.<br>• Park factors OUT (dropped first per sequencing rule); weather OUT (scope); lineups, platoon splits, umpires, travel/rest OUT (v0 cannot see them).<br>• Cross-matchup runs use the odds-ratio-free scaling exp = off_rate * def_rate / league_rate — the standard first-order approximation, unfitted.</div>
+<div class="notes"><b>🙈 What v0 cannot see: bullpen quality and availability (the ~43% of defensive innings it proxies with a team-wide rate), platoon and handedness splits, actual lineups (rest days, injuries, call-ups), park factors, weather (wind alone can swing a total by a run), umpire tendencies, travel/rest, catcher framing, and anything Statcast measures. Its ratings are season-long averages with no recency weighting, its starter view is one regressed runs-allowed number, and its totals distribution is a Poisson convenience. Treat every lean as a diagnostic reading from a deliberately blunt instrument — that is the entire point of the shadow.</b></div>
+<div class="banner">SHADOW — v0 DIAGNOSTIC — NOT BETS — NOT BOARD-ELIGIBLE — PAPER ONLY · NOT BETTING ADVICE</div>
+</div></body></html>
